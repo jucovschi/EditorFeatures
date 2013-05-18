@@ -1,3 +1,9 @@
+if (typeof(jQuery("asd").mathquill)=="undefined") {
+	jQuery.getScript("http://mathquill.com/mathquill/mathquill.min.js", function(){});
+	jQuery('head').append('<link rel="stylesheet" href="http://mathquill.com/mathquill/mathquill.css" type="text/css" />');
+}
+
+
 var mathFrame = jQuery("<div>").html("<div class='mathquill-editable'></div>");
 
 jQuery(mathFrame).dialog({
