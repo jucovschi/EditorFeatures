@@ -69,6 +69,14 @@ core.embbedText = (range, prefix, suffix) ->
 	core.insert(range.start, prefix)
 
 
-console.log(core);
+core.shareDoc = () ->
+	req = window.require.config({
+		context: "redsys",
+		baseUrl: "http://localhost:8002",
+	});
+	req [ "redsys" ], (redsys) ->
+		redsys.setProject("sample_project", () ->
+			);
+	return null
 
 return core;
